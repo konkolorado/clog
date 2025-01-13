@@ -1,7 +1,7 @@
 # Keep a personal changelog
 
 A template repo that can be used to maintain a personal changelog. Powered by
-`scriv` and Github Actions.
+`scriv`* and Github Actions.
 
 ## Setup 
 
@@ -9,7 +9,7 @@ A template repo that can be used to maintain a personal changelog. Powered by
     ```bash
     gh repo create my-clog --template konkolorado/clog --private --clone
     ```
-2. [Optional] Install `poetry`
+2. [Optional] Install `poetry`*
 3. Install `scriv`
     
     **NOTE** This repo lists `scriv` as a dependency for convenience. You can use an
@@ -42,3 +42,8 @@ Changelog fragments are compiled to a version following the CalVer scheme
 ```bash
 ncal -w  [YYYY]
 ```
+
+
+
+* [Scriv](https://scriv.readthedocs.io/en/1.5.1/index.html)
+* [Poetry](https://python-poetry.org/)
