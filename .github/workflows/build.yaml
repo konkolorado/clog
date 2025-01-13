@@ -16,7 +16,7 @@ jobs:
 
       - name: Test for changelog fragments
         run: |
-          if [[ $(ls -l changelog.d/ | wc -l) -gt 1 ]];
+          if [[ $(ls -l changelog.d/ | wc -l) -gt 2 ]];
           then
             echo "Changelog fragments found, proceeding with workflow"
           else
