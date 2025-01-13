@@ -1,0 +1,43 @@
+name: Periodic Changelog Build
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 17 * * SUN"
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    name: Build the changelog
+    runs-on: github-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test for changelog fragments
+        run: |
+          if [[ $(ls -l changelog.d/ | wc -l) -gt 1 ]];
+          then
+            echo "Changelog fragments found, proceeding with workflow"
+          else
+            echo "No changelog fragments found, aborting workflow"
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "poetry"
+
+      - run: python -m pip install poetry
+
+      - run: poetry install
+
+      - run: poetry run scriv collect
+
+      - name: Commit release changes
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@github.com
+          git commit -am "Automated changelog build"
+          git push

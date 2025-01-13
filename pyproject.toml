@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "clog"
+version = "0.1.0"
+description = "Keep a personal changelog, driven by scriv"
+authors = ["Uriel Mandujano"]
+readme = "README.md"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scriv = "^1.5.1"
+
+[tool.scriv]
+fragment_directory = "changelog.d"
+format = "md"
+categories = ["New Skills", "Delivered", "Connections", "Challenges"]
+version = "command: echo v$(date +%Y).$(date +%V)"
+entry_title_template = "{{ version }}"
