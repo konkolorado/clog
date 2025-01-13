@@ -5,13 +5,16 @@ A template repo that can be used to maintain a personal changelog. Powered by
 
 ## Setup 
 
-1. Clone this repository
+1. Create a new repository from this template
+    ```bash
+    gh repo create my-clog --template konkolorado/clog --private --clone
+    ```
 2. [Optional] Install `poetry`
 3. Install `scriv`
-   
-**NOTE** This repo lists `scriv` as a dependency for convenience. You can use an
-externally installed version of `scriv` (from `pipx`, for example) to create new
-changelog fragments.
+    **NOTE** This repo lists `scriv` as a dependency for convenience. You can use an
+    externally installed version of `scriv` (from `pipx`, for example) to create new
+    changelog fragments. Or you can install using `poetry install`. If installed
+    using `poetry`, prepend `poetry` to all commands that use `scriv` below.
 
 ## Usage 
 
@@ -25,8 +28,9 @@ Fill out the newly created `.md` document in the `changelog.d` directory. Make
 sure to uncomment only the sections that are going to have contents added to
 them. Git add and push the file. 
 
-A Github Action will periodically run, collecting changelog fragments in the
-`changelog.d` directoy and compiling them into the completed `CHANGELOG.md`. 
+A Github Action will periodically run (by default on Sunday evenings),
+collecting changelog fragments in the `changelog.d` directoy and compiling them
+into the completed `CHANGELOG.md`. 
 
 ## Versions
 
