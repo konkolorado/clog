@@ -11,6 +11,7 @@ A template repo that can be used to maintain a personal changelog. Powered by
     ```
 2. [Optional] Install `poetry`
 3. Install `scriv`
+    
     **NOTE** This repo lists `scriv` as a dependency for convenience. You can use an
     externally installed version of `scriv` (from `pipx`, for example) to create new
     changelog fragments. Or you can install using `poetry install`. If installed
