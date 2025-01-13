@@ -1,6 +1,21 @@
 # Keep a personal changelog
 
-When you want to document an acheivement:
+A template repo that can be used to maintain a personal changelog. Powered by
+`scriv` and Github Actions.
+
+## Setup 
+
+1. Clone this repository
+2. [Optional] Install `poetry`
+3. Install `scriv`
+   
+**NOTE** This repo lists `scriv` as a dependency for convenience. You can use an
+externally installed version of `scriv` (from `pipx`, for example) to create new
+changelog fragments.
+
+## Usage 
+
+When you want to document an achievement:
 
 ```bash
 scriv create
@@ -8,11 +23,10 @@ scriv create
 
 Fill out the newly created `.md` document in the `changelog.d` directory. Make
 sure to uncomment only the sections that are going to have contents added to
-them. 
+them. Git add and push the file. 
 
 A Github Action will periodically run, collecting changelog fragments in the
 `changelog.d` directoy and compiling them into the completed `CHANGELOG.md`. 
-
 
 ## Versions
 
