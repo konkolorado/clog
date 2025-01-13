@@ -35,7 +35,7 @@ jobs:
 
       - run: poetry run scriv collect
 
-      - name: Commit release changes
+      - name: Commit changelog updates
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@github.com
